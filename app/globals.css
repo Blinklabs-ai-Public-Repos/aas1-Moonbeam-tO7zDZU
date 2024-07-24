@@ -1,0 +1,333 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.rich-text .ql-container {
+  @apply border-0 !important;
+}
+
+.rich-text .ql-editor {
+  @apply p-0;
+}
+
+@layer base {
+  :root {
+    --font-family-primary: "Satoshi";
+
+    --color-white: white;
+    --color-neutral-50: #faf7f7;
+    --color-neutral-100: #f2f0f0;
+    --color-neutral-200: #e5e1df;
+    --color-neutral-300: #c7c1bf;
+    --color-neutral-400: #9c9694;
+    --color-neutral-500: #8c8684;
+    --color-neutral-600: #6e6765;
+    --color-neutral-700: #3d3937;
+    --color-neutral-800: #292626;
+    --color-neutral-900: #1a1817;
+    --color-neutral-950: #0d0b0a;
+    --color-orange-100: #fff3f0;
+    --color-orange-200: #f5dfd7;
+    --color-orange-300: #ff551e;
+    --color-orange-400: #d9562b;
+    --color-orange-500: #7d2a0f;
+    --color-orange-600: #451708;
+    --color-red-100: #fcedf0;
+    --color-red-200: #f0d5da;
+    --color-red-300: #ed214a;
+    --color-red-400: #bf223e;
+    --color-red-500: #660314;
+    --color-red-600: #400811;
+    --color-green-100: #f2fce8;
+    --color-green-200: #e1f7cb;
+    --color-green-300: #88e32d;
+    --color-green-400: #6fba23;
+    --color-green-500: #365e15;
+    --color-green-600: #1c3804;
+    --color-yellow-100: #fcf5e6;
+    --color-yellow-200: #f2e3c4;
+    --color-yellow-300: #ffbb2e;
+    --color-yellow-400: #e5a520;
+    --color-yellow-500: #664306;
+    --color-yellow-600: #4a3100;
+    --color-blue-100: #e6f0fc;
+    --color-blue-200: #d4e8fc;
+    --color-blue-300: #328afc;
+    --color-blue-400: #3f8ae0;
+    --color-blue-500: #1a4680;
+    --color-blue-600: #143152;
+    --color-black: #000;
+
+    /*---------------- background -------------*/
+    /* page */
+    --bg-page-body: var(--color-neutral-50);
+    --bg-main-container: var(--color-white);
+    /* global */
+    --bg-base: var(--color-neutral-50);
+    --bg-secondary: var(--color-neutral-100);
+    --bg-active: var(--color-neutral-100);
+    --bg-active-hover: var(--color-neutral-200);
+    --bg-inactive: var(--color-neutral-200);
+    --bg-inverse: var(--color-neutral-800);
+    --bg-inverse-hover: var(--color-neutral-800);
+    --bg-popover-base: var(--color-white);
+    --bg-popover-base-subtle: var(--color-neutral-50);
+
+    /* brand */
+    --bg-brand: var(--color-orange-300);
+    --bg-brand-hover: var(--color-orange-400);
+    --bg-brand-inactive: var(--color-orange-200);
+    /* error */
+    --bg-error-surface: var(--color-red-100);
+    --bg-error-pri: var(--color-red-300);
+    --bg-error-pri-hover: var(--color-red-400);
+    --bg-error-pri-disabled: var(--color-red-200);
+    /* success */
+    --bg-success: var(--color-green-100);
+    /* warning */
+    --bg-warning: var(--color-yellow-100);
+    /* info */
+    --bg-info: var(--color-blue-100);
+
+    /*---------------- border -------------*/
+    /* global */
+    --border-base: var(--color-neutral-200);
+    --border-subtle: var(--color-neutral-100);
+    --border-strong: var(--color-neutral-300);
+    --border-inactive: var(--color-neutral-100);
+    --border-inverse: var(--color-neutral-50);
+
+    /* brand */
+    --border-brand: var(--color-orange-300);
+    --border-brand-inverse: var(--color-orange-400);
+
+    /* error */
+    --border-error: var(--color-red-200);
+    --border-error-strong: var(--color-red-400);
+
+    /* success */
+    --border-success: var(--color-green-200);
+    --border-success-strong: var(--color-green-400);
+
+    /* warning */
+    --border-warning: var(--color-yellow-200);
+    /* info */
+    --border-info: var(--color-blue-200);
+
+    /*---------------- icons -------------*/
+    /* global */
+    --icon-base: var(--color-neutral-900);
+    --icon-subtle: var(--color-neutral-600);
+    --icon-strong: var(--color-neutral-950);
+    --icon-inactive: var(--color-neutral-400);
+    --icon-inverse: var(--color-neutral-50);
+    --icon-on-color: var(--color-white);
+
+    /* brand */
+    --icon-brand: var(--color-orange-300);
+    --icon-brand-inverse: var(--color-orange-400);
+
+    /* error */
+    --icon-error: var(--color-red-600);
+    --icon-error-strong: var(--color-red-400);
+    --icon-error-disabled: var(--color-red-200);
+
+    /* success */
+    --icon-success: var(--color-green-600);
+    --icon-success-strong: var(--color-green-400);
+
+    /* warning */
+    --icon-warning: var(--color-yellow-600);
+    /* info */
+    --icon-info: var(--color-blue-600);
+
+    /*---------------- text -------------*/
+    /* global */
+    --text-base: var(--color-neutral-900);
+    --text-subtle: var(--color-neutral-600);
+    --text-strong: var(--color-neutral-950);
+    --text-inactive: var(--color-neutral-400);
+    --text-inverse: var(--color-neutral-50);
+    --text-on-color: var(--color-white);
+
+    /* brand */
+    --text-brand: var(--color-orange-300);
+    --text-brand-inverse: var(--color-orange-400);
+
+    /* error */
+    --text-error: var(--color-red-600);
+    --text-error-strong: var(--color-red-400);
+    --text-error-disabled: var(--color-red-200);
+
+    /* success */
+    --text-success: var(--color-green-600);
+    --text-success-strong: var(--color-green-400);
+
+    /* warning */
+    --text-warning: var(--color-yellow-600);
+    --text-warning-strong: var(--color-yellow-400);
+    /* info */
+    --text-info: var(--color-blue-600);
+    --text-info-strong: var(--color-yellow-400);
+
+    --background: var(--bg-page-body);
+    --foreground: var(--text-base);
+    --card: var(--bg-main-container);
+    --card-foreground: var(--text-base);
+    --popover: var(--bg-popover-base);
+    --popover-foreground: var(--text-base);
+    --primary: var(--bg-brand);
+    --primary-foreground: var(--text-on-color);
+    --secondary: var(--bg-secondary);
+    --secondary-foreground: var(--text-subtle);
+    --muted: var(--bg-inactive);
+    --muted-foreground: var(--text-inactive);
+    --accent: var(--bg-warning);
+    --accent-foreground: var(--text-warning);
+    --destructive: var(--bg-error-pri);
+    --destructive-foreground: var(--text-error);
+    --border: var(--border-base);
+    --input: var(--bg-base);
+    --ring: var(--border-brand);
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /*---------------- background -------------*/
+    /* page */
+    --bg-page-body: var(--color-neutral-950);
+    --bg-main-container: var(--color-neutral-900);
+    /* global */
+    --bg-base: var(--color-neutral-800);
+    --bg-secondary: var(--color-neutral-700);
+    --bg-active: var(--color-neutral-700);
+    --bg-active-hover: var(--color-neutral-600);
+    --bg-inactive: var(--color-neutral-700);
+    --bg-inverse: var(--color-neutral-50);
+    --bg-inverse-hover: var(--color-neutral-100);
+    --bg-popover-base: var(--color-neutral-800);
+    --bg-popover-base-subtle: var(--color-neutral-700);
+    /* brand */
+    --bg-brand: var(--color-orange-400);
+    --bg-brand-hover: var(--color-orange-300);
+    --bg-brand-inactive: var(--color-orange-500);
+    /* error */
+    --bg-error-surface: var(--color-red-600);
+    --bg-error-pri: var(--color-red-400);
+    --bg-error-pri-hover: var(--color-red-300);
+    --bg-error-pri-disabled: var(--color-red-500);
+    /* success */
+    --bg-success: var(--color-green-600);
+    /* warning */
+    --bg-warning: var(--color-yellow-600);
+    /* info */
+    --bg-info: var(--color-blue-600);
+
+    /*---------------- border -------------*/
+    /* global */
+    --border-base: var(--color-neutral-700);
+    --border-subtle: var(--color-neutral-800);
+    --border-strong: var(--color-neutral-600);
+    --border-inactive: var(--color-neutral-800);
+    --border-inverse: var(--color-neutral-900);
+
+    /* brand */
+    --border-brand: var(--color-orange-400);
+    --border-brand-inverse: var(--color-orange-300);
+
+    /* error */
+    --border-error: var(--color-red-500);
+    --border-error-strong: var(--color-red-300);
+
+    /* success */
+    --border-success: var(--color-green-500);
+    --border-success-strong: var(--color-green-300);
+
+    /* warning */
+    --border-warning: var(--color-yellow-500);
+    /* info */
+    --border-info: var(--color-blue-500);
+
+    /*---------------- icons -------------*/
+    /* global */
+    --icon-base: var(--color-neutral-50);
+    --icon-subtle: var(--color-neutral-400);
+    --icon-strong: var(--color-white);
+    --icon-inactive: var(--color-neutral-600);
+    --icon-inverse: var(--color-neutral-900);
+    --icon-on-color: var(--color-white);
+
+    /* brand */
+    --icon-brand: var(--color-orange-400);
+    --icon-brand-inverse: var(--color-orange-300);
+
+    /* error */
+    --icon-error: var(--color-red-100);
+    --icon-error-strong: var(--color-red-300);
+    --icon-error-disabled: var(--color-red-500);
+
+    /* success */
+    --icon-success: var(--color-green-100);
+    --icon-success-strong: var(--color-green-300);
+
+    /* warning */
+    --icon-warning: var(--color-yellow-100);
+    /* info */
+    --icon-info: var(--color-blue-100);
+
+    /*---------------- text -------------*/
+    /* global */
+    --text-base: var(--color-neutral-50);
+    --text-subtle: var(--color-neutral-400);
+    --text-strong: var(--color-white);
+    --text-inactive: var(--color-neutral-500);
+    --text-inverse: var(--color-neutral-900);
+    --text-on-color: var(--color-white);
+
+    /* brand */
+    --text-brand: var(--color-orange-400);
+    --text-brand-inverse: var(--color-orange-300);
+
+    /* error */
+    --text-error: var(--color-red-100);
+    --text-error-strong: var(--color-red-300);
+    --text-error-disabled: var(--color-red-500);
+
+    /* success */
+    --text-success: var(--color-green-100);
+    --text-success-strong: var(--color-green-300);
+
+    /* warning */
+    --text-warning: var(--color-yellow-100);
+    --text-warning-strong: var(--color-yellow-300);
+    /* info */
+    --text-info: var(--color-blue-100);
+    --text-info-strong: var(--color-yellow-300);
+
+    --background: var(--bg-page-body);
+    --foreground: var(--text-base);
+    --card: var(--bg-main-container);
+    --card-foreground: var(--text-base);
+    --popover: var(--bg-popover-base);
+    --popover-foreground: var(--text-base);
+    --primary: var(--bg-brand);
+    --primary-foreground: var(--text-on-color);
+    --secondary: var(--bg-secondary);
+    --secondary-foreground: var(--text-subtle);
+    --muted: var(--bg-inactive);
+    --muted-foreground: var(--text-inactive);
+    --accent: var(--bg-warning);
+    --accent-foreground: var(--text-warning);
+    --destructive: var(--bg-error-pri);
+    --destructive-foreground: var(--text-error);
+    --border: var(--border-base);
+    --input: var(--bg-base);
+    --ring: var(--border-brand);
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-page-body;
+  }
+}
